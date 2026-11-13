@@ -3,50 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>take920</title>
-<meta name="description" content="佐々木健仁（たけ）のテストサイト。ウェブサイトの作成・公開・保守を自動で回す実験中。">
+<title>佐々木健仁（たけ）｜take920</title>
+<meta name="description" content="佐々木健仁（たけ）のサイト。神奈川県相模原市を拠点に、携帯催事・人材配置、不動産、地方創生、DX・業務支援に取り組む個人事業主。">
 <style>
-  :root { color-scheme: light; }
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --text: #161616;
+    --sub: #5c5c5c;
+    --faint: #9a9a9a;
+    --line: #e7e7e7;
+    --line-soft: #f1f1f1;
+    --hover: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101010;
+      --text: #ececec;
+      --sub: #a8a8a8;
+      --faint: #6f6f6f;
+      --line: #262626;
+      --line-soft: #1c1c1c;
+      --hover: #161616;
+    }
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
-    background: #ffffff;
-    color: #1a1a1a;
-    line-height: 1.8;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
     -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 640px; margin: 0 auto; padding: 96px 24px 80px; }
-  .kicker { font-size: 13px; letter-spacing: 0.18em; color: #8a8a8a; text-transform: uppercase; }
-  h1 { font-size: 40px; font-weight: 700; letter-spacing: 0.02em; margin-top: 12px; }
-  .name-sub { font-size: 15px; color: #555; margin-top: 4px; }
-  .lead { font-size: 16px; color: #333; margin-top: 32px; }
-  section { margin-top: 56px; }
-  h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #8a8a8a; text-transform: uppercase; padding-bottom: 10px; border-bottom: 1px solid #e6e6e6; }
-  ul { list-style: none; margin-top: 8px; }
-  li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 15px; }
-  li span { color: #777; font-size: 13px; display: block; margin-top: 2px; }
-  footer { margin-top: 72px; font-size: 12px; color: #aaa; }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    max-width: 720px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: baseline; justify-content: space-between;
+  }
+  .wordmark { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; }
+  nav { display: flex; gap: 22px; }
+  nav a { font-size: 13px; color: var(--sub); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+  main { max-width: 720px; margin: 0 auto; padding: 88px 24px 72px; }
+  .kicker { font-size: 12px; letter-spacing: 0.2em; color: var(--faint); }
+  h1 { font-size: 44px; font-weight: 700; letter-spacing: 0.03em; margin-top: 14px; line-height: 1.3; }
+  h1 .light { color: var(--faint); font-weight: 600; }
+  .lead { font-size: 16px; color: var(--sub); margin-top: 26px; max-width: 34em; }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 32px;
+    margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--sub);
+  }
+  .meta dt { color: var(--faint); display: inline; margin-right: 8px; }
+  .meta dd { display: inline; }
+  .meta .item { display: block; }
+  section { margin-top: 72px; }
+  h2 {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: var(--faint);
+    padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  }
+  .biz { list-style: none; }
+  .biz li {
+    display: flex; gap: 20px; align-items: baseline;
+    padding: 20px 8px; border-bottom: 1px solid var(--line-soft);
+  }
+  .biz li:hover { background: var(--hover); }
+  .biz .num {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px; color: var(--faint); flex-shrink: 0; padding-top: 3px;
+  }
+  .biz .body { flex: 1; }
+  .biz .name { font-size: 16px; font-weight: 600; }
+  .biz .desc { font-size: 14px; color: var(--sub); margin-top: 3px; }
+  .text { font-size: 15px; color: var(--sub); margin-top: 20px; max-width: 36em; }
+  .text strong { color: var(--text); font-weight: 600; }
+  .values { font-size: 17px; color: var(--text); margin-top: 20px; letter-spacing: 0.04em; }
+  .values .arrow { color: var(--faint); margin: 0 6px; }
+  footer {
+    margin-top: 88px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-size: 12px; color: var(--faint);
+  }
+  @media (max-width: 560px) {
+    main { padding: 64px 20px 56px; }
+    h1 { font-size: 34px; }
+    .biz li { padding: 16px 4px; gap: 14px; }
+    nav { gap: 16px; }
+  }
 </style>
 </head>
 <body>
+<header>
+  <div class="header-inner">
+    <p class="wordmark">TAKE920</p>
+    <nav>
+      <a href="#business">事業</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#values">考え方</a>
+    </nav>
+  </div>
+</header>
 <main>
-  <p class="kicker">take920</p>
-  <h1>たけ</h1>
-  <p class="name-sub">佐々木健仁（ささき たけひと）</p>
-  <p class="lead">神奈川県相模原市を拠点にする個人事業主。このサイトは、ウェブサイトの作成・公開・保守をAIと一緒に自動で回す実験のテストサイトです。</p>
+  <p class="kicker">SAGAMIHARA, KANAGAWA</p>
+  <h1>佐々木健仁 <span class="light">／ たけ</span></h1>
+  <p class="lead">神奈川県相模原市を拠点にする個人事業主。携帯催事・人材配置を収益基盤に、不動産と地方の仕事を育てています。仕組みで参加のハードルを下げ、人の選択肢を増やすことがテーマです。</p>
+  <dl class="meta">
+    <span class="item"><dt>拠点</dt><dd>神奈川県相模原市</dd></span>
+    <span class="item"><dt>所属</dt><dd>合同会社イプシロン・ラボ（営業担当）</dd></span>
+    <span class="item"><dt>肩書</dt><dd>個人事業主</dd></span>
+  </dl>
 
-  <section>
-    <h2>やっていること</h2>
-    <ul>
-      <li>携帯催事・人材配置<span>収益基盤。スタッフの配置と営業支援</span></li>
-      <li>不動産<span>「住まいの見立て」「はじめてのオフィス。」の2ブランド</span></li>
-      <li>地方創生<span>地域おこし協力隊を検討中。旅と暮らしのあいだを探っている</span></li>
-      <li>DX・業務支援<span>地域事業者の予約・LINE・決済まわりの整備と伴走</span></li>
-      <li>アオハル旅<span>若者・学生の旅コミュニティ</span></li>
+  <section id="business">
+    <h2>事業</h2>
+    <ul class="biz">
+      <li>
+        <span class="num">01</span>
+        <div class="body">
+          <p class="name">携帯催事・人材配置</p>
+          <p class="desc">収益基盤。携帯電話の催事販売における営業支援と、スタッフの育成・配置。</p>
+        </div>
+      </li>
+      <li>
+        <span class="num">02</span>
+        <div class="body">
+          <p class="name">不動産</p>
+          <p class="desc">居住用「住まいの見立て」と、東京の創業初期向け「はじめてのオフィス。」の2ブランド。相談対応は提携企業と連携する仕組みで運営。</p>
+        </div>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <div class="body">
+          <p class="name">地方創生</p>
+          <p class="desc">旅と暮らしのあいだを探る仕事。地域おこし協力隊も検討しながら、地域の事業づくりや観光の連携に関わっていく。</p>
+        </div>
+      </li>
+      <li>
+        <span class="num">04</span>
+        <div class="body">
+          <p class="name">DX・業務支援</p>
+          <p class="desc">地域事業者向けに、予約受付・LINE公式アカウント・決済まわりの整備と月額の伴走支援。経理作業のアウトソーシングや情報システム支援も。</p>
+        </div>
+      </li>
+      <li>
+        <span class="num">05</span>
+        <div class="body">
+          <p class="name">アオハル旅</p>
+          <p class="desc">若者・学生の旅コミュニティ。有名な観光地より、知らない街の日常に入る旅を発信している。</p>
+        </div>
+      </li>
     </ul>
   </section>
 
-  <footer>take920 — テスト運用中</footer>
+  <section id="profile">
+    <h2>プロフィール</h2>
+    <p class="text">2003年生まれ。大学時代に旅行サークルを創設し、300名規模まで育てた経験から、<strong>「旅は人の選択肢を増やす」</strong>という考えが活動の芯にある。携帯催事の営業支援を2023年に始め、現在は不動産営業と地方の仕事へ軸足を広げている最中。</p>
+  </section>
+
+  <section id="values">
+    <h2>考え方</h2>
+    <p class="values">余裕<span class="arrow">→</span>自由<span class="arrow">→</span>主体性<span class="arrow">→</span>個性・熱中</p>
+    <p class="text">自由とは、何もしないことではなく、<strong>自分で考え、選び、その選択を引き受けること</strong>。AIや自動化で生まれた余剰は、関わる人の価格低下や体験の向上に還元したいと考えている。</p>
+  </section>
+
+  <footer>
+    <span>© 2026 佐々木健仁</span>
+    <span>take920.com</span>
+  </footer>
 </main>
 </body>
 </html>
