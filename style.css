@@ -36,7 +36,7 @@ header {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 14px;
   margin-inline: var(--gutter);
   min-height: 72px;
@@ -237,7 +237,7 @@ footer { background: var(--deep); color: var(--paper); }
   .campaign, .values-section, footer { color: var(--ink); }
 }
 
-.wordmark { text-decoration: none; }
+.wordmark { display: none; }
 nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: .4em; }
 
 .home .hero h1 {
