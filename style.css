@@ -36,7 +36,7 @@ header {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 14px;
   margin-inline: var(--gutter);
   min-height: 72px;
@@ -234,7 +234,7 @@ footer { background: var(--deep); color: var(--paper); }
     --accent: #e3e3e3;
   }
 
-  .campaign, .values-section, footer { color: var(--ink); }
+  .campaign, .values-section, footer, .structure-goal { color: var(--ink); }
 }
 
 .wordmark { text-decoration: none; }
