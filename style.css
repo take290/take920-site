@@ -1,12 +1,12 @@
 :root {
   color-scheme: light;
-  --paper: #f8f7f2;
-  --ink: #202a25;
-  --secondary: #465047;
-  --rule: #bcc3b8;
-  --wash: #e8ece3;
-  --deep: #21362d;
-  --accent: #e2e9b8;
+  --paper: #f4f4f4;
+  --ink: #1d1d1d;
+  --secondary: #4c4c4c;
+  --rule: #c6c6c6;
+  --wash: #eaeaea;
+  --deep: #191919;
+  --accent: #d4d4d4;
   --gutter: clamp(22px, 6vw, 96px);
   --reading: 42em;
 }
@@ -66,13 +66,13 @@ nav a:hover { text-decoration: underline; }
   height: 100%;
 }
 
-.hero-image { object-fit: cover; object-position: center 53%; }
+.hero-image { object-fit: cover; object-position: center 53%; filter: grayscale(1) contrast(1.06); }
 
 .hero::after {
   content: "";
   background:
-    linear-gradient(180deg, #111c17bf 0%, transparent 25%, transparent 66%, #111c1799 100%),
-    linear-gradient(90deg, transparent 29%, #111c17b3 73%, #111c17c7);
+    linear-gradient(180deg, #0a0a0abf 0%, transparent 25%, transparent 66%, #0a0a0a99 100%),
+    linear-gradient(90deg, transparent 29%, #0a0a0ab3 73%, #0a0a0ac7);
 }
 
 .hero-inner {
@@ -107,8 +107,8 @@ nav a:hover { text-decoration: underline; }
 .estate .hero-image { object-position: 57% center; }
 .estate .hero::after {
   background:
-    linear-gradient(180deg, #111c17a6 0%, transparent 29%, transparent 66%, #111c1799 100%),
-    linear-gradient(90deg, #111c17bb, #111c1766 48%, transparent 82%);
+    linear-gradient(180deg, #0a0a0aa6 0%, transparent 29%, transparent 66%, #0a0a0a99 100%),
+    linear-gradient(90deg, #0a0a0abb, #0a0a0a66 48%, transparent 82%);
 }
 
 .intro {
@@ -182,7 +182,7 @@ nav a:hover { text-decoration: underline; }
   font-weight: 700;
   text-decoration: none;
 }
-.brand-link a:hover { background: #365143; text-decoration: underline; }
+.brand-link a:hover { background: #3a3a3a; text-decoration: underline; }
 .back-link { padding-block: 34px; }
 footer { background: var(--deep); color: var(--paper); }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-block: 28px; font-size: 12px; }
@@ -191,7 +191,7 @@ footer { background: var(--deep); color: var(--paper); }
   .header-inner { min-height: 60px; }
   .hero-image { object-position: 43% center; }
   .hero::after, .estate .hero::after {
-    background: linear-gradient(180deg, #111c17bf, transparent 23%, transparent 40%, #111c17eb 100%);
+    background: linear-gradient(180deg, #0a0a0abf, transparent 23%, transparent 40%, #0a0a0aeb 100%);
   }
   .hero-inner { align-items: end; padding-bottom: 112px; }
   .hero-heading { justify-self: start; width: auto; }
@@ -225,12 +225,13 @@ footer { background: var(--deep); color: var(--paper); }
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --paper: #18211c;
-    --ink: #f1f2e9;
-    --secondary: #c9d2c5;
-    --rule: #526156;
-    --wash: #232f27;
-    --deep: #263b31;
+    --paper: #131313;
+    --ink: #f0f0f0;
+    --secondary: #c4c4c4;
+    --rule: #4a4a4a;
+    --wash: #202020;
+    --deep: #232323;
+    --accent: #e3e3e3;
   }
 
   .campaign, .values-section, footer { color: var(--ink); }
@@ -261,7 +262,7 @@ nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 
 .chapter-hero {
   padding-block: clamp(64px, 10vw, 148px);
   background: var(--deep);
-  color: #f8f7f2;
+  color: #f4f4f4;
 }
 
 .chapter-hero .heading-en {
@@ -323,12 +324,12 @@ nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 
   background: var(--deep);
   text-decoration: none;
 }
-.primary-link:hover { background: #365143; text-decoration: underline; }
+.primary-link:hover { background: #3a3a3a; text-decoration: underline; }
 
 @media (max-width: 780px) {
   .home .hero h1 { font-size: clamp(30px, 9.6vw, 62px); }
   .home .hero::after {
-    background: linear-gradient(180deg, #111c17c9, transparent 25%, transparent 36%, #111c17d9 72%, #111c17fa);
+    background: linear-gradient(180deg, #0a0a0ac9, transparent 25%, transparent 36%, #0a0a0ad9 72%, #0a0a0afa);
   }
   .hero-summary { margin-top: 12px; }
   .hero-credit { margin-top: 12px; }
