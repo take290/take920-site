@@ -351,7 +351,7 @@ nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 
 
 .structure-goal {
   background: var(--deep);
-  color: var(--paper);
+  color: #f4f4f4;
   padding: clamp(24px, 3.5vw, 44px);
   margin-bottom: clamp(30px, 4.5vw, 56px);
 }
