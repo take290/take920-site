@@ -36,7 +36,7 @@ header {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 14px;
   margin-inline: var(--gutter);
   min-height: 72px;
@@ -45,6 +45,8 @@ header {
 
 .wordmark { font-size: clamp(15px, 2vw, 23px); font-weight: 900; letter-spacing: .12em; }
 nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px clamp(12px, 2.7vw, 40px); }
+.logo { display: inline-flex; flex: none; }
+.logo img { display: block; width: 36px; height: 36px; border-radius: 9px; }
 nav a { padding-block: 10px; font-size: clamp(11px, 1.1vw, 14px); text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 
@@ -198,6 +200,9 @@ footer { background: var(--deep); color: var(--paper); }
   .hero h1 { font-size: clamp(38px, 10.8vw, 70px); }
   .panel-inner, .biz { grid-template-columns: 1fr; }
   .heading-ja { margin-top: 9px; }
+  nav { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { flex: none; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
