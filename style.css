@@ -46,7 +46,7 @@ header {
 .wordmark { font-size: clamp(15px, 2vw, 23px); font-weight: 900; letter-spacing: .12em; }
 nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px clamp(12px, 2.7vw, 40px); }
 .logo { display: inline-flex; flex: none; }
-.logo img { display: block; width: 36px; height: 36px; border-radius: 9px; }
+.logo img { display: block; width: 36px; height: 36px; }
 nav a { padding-block: 10px; font-size: clamp(11px, 1.1vw, 14px); text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 
@@ -124,7 +124,8 @@ nav a:hover { text-decoration: underline; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 30px; padding-top: 22px; border-top: 1px solid var(--rule); font-size: 13px; }
 .meta dt, .meta dd { display: inline; }
 .cat-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: clamp(26px, 4vw, 44px); }
-.cat-photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.cat-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; margin: 0; }
+.cat-photo img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 .cat-caption { margin-top: 10px; color: var(--secondary); font-size: 13px; }
 .meta dt { margin-right: 9px; font-weight: 700; }
 
@@ -206,6 +207,9 @@ footer { background: var(--deep); color: var(--paper); }
   nav { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   nav::-webkit-scrollbar { display: none; }
   nav a { flex: none; }
+  .cat-photos { grid-template-columns: 1fr; gap: 14px; }
+  .cat-photo { aspect-ratio: auto; }
+  .cat-photo img { position: static; height: auto; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
