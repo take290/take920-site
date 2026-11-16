@@ -123,6 +123,9 @@ nav a:hover { text-decoration: underline; }
 .estate .intro .lead + .lead { font-size: clamp(16px, 1.65vw, 20px); font-weight: 400; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 30px; padding-top: 22px; border-top: 1px solid var(--rule); font-size: 13px; }
 .meta dt, .meta dd { display: inline; }
+.cat-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: clamp(26px, 4vw, 44px); }
+.cat-photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.cat-caption { margin-top: 10px; color: var(--secondary); font-size: 13px; }
 .meta dt { margin-right: 9px; font-weight: 700; }
 
 .panel { padding-block: clamp(65px, 10vw, 145px); }
